@@ -73,13 +73,15 @@
         }
 
         $("#imageModal>#imageBody img[imgguid]").each(function(){
-            $(this).click(function () {//.dblclick(function () {
-                var winW = $(this).closest("#imageBody").width();
+            $(this).click(function (e) {//.dblclick(function () {
+                var winW = $(this).closest("#imageBody").width(); //图片容器的高宽
                 var winH = $(this).closest("#imageBody").height();
-                var imgW = $(this).width();
+                var imgW = $(this).width();//点击图片时的图片宽度
+                var imgH = $(this).height();//点击图片时的图片宽度
            
-              //  console.log("winW:" + winW);
-               // console.log("imgW:" + imgW);
+                var mouseX = e.offsetX;
+                var mouseY = e.offsetY;
+
                 if (winW == imgW) { //放大
                     var tranX =tranY= "-50%";
                     $(this).css({ "width": "auto" });
@@ -94,8 +96,8 @@
                     }
                     $(this).css("transform", "translate("+tranX+","+tranY+")");
 
-                    var scrollL = ($(this).width() - winW) / 2;
-                    var scrollT = ($(this).height() - winH) / 2;
+                    var scrollL = ($(this).width() - winW) *(mouseX/imgW);
+                    var scrollT = ($(this).height() - winH) *(mouseY/imgH);
                     if(scrollL>0)
                         $(this).parent().scrollLeft(scrollL);
                     if(scrollT>0)
@@ -104,6 +106,8 @@
                 else {   //缩小
                     $(this).width(winW).css({ position: "absolute",left:"50%",top:"50%", "transform": "translate(-50%,-50%)" });
                 }
+
+                return false;
             });
         });
              
