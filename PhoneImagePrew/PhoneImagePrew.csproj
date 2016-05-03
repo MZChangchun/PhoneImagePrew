@@ -82,10 +82,16 @@
     <Content Include="Resource\bootstrap\js\npm.js" />
     <Content Include="imagePreview.js" />
     <Content Include="Resource\image\1.jpg" />
+    <Content Include="Resource\image\1.png" />
     <Content Include="Resource\image\2.jpg" />
+    <Content Include="Resource\image\2.png" />
     <Content Include="Resource\image\3.jpg" />
     <Content Include="Resource\image\4.jpg" />
     <Content Include="Resource\image\5.jpg" />
+    <Content Include="Resource\image\5.png" />
+    <Content Include="Resource\image\6.png" />
+    <Content Include="Resource\image\7.png" />
+    <Content Include="Resource\image\9.jpg" />
     <Content Include="Resource\jquery-1.12.3.js" />
     <Content Include="Resource\jquery.min.js" />
     <Content Include="Web.config" />
